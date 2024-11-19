@@ -62,29 +62,29 @@ To install the project, follow these steps:
 
 1. **(Optional) Create a Virtual Environment**
 
-We created a virtual environment to maintain versions and particular requiremnts separate from other projects
+    We created a virtual environment to maintain versions and particular requiremnts separate from other projects
 
-Instructions:
-   Run the following commands in your terminal to create a virtual environment:
+    Instructions:
+    Run the following commands in your terminal to create a virtual environment:
 
-   ```bash
-   python -m venv env_hciai
-   source env_hciai/bin/activate  # On macOS/Linux
-   env_hciai\Scripts\activate     # On Windows
-   ```
+    ```bash
+    python -m venv env_hciai
+    source env_hciai/bin/activate  # On macOS/Linux
+    env_hciai\Scripts\activate     # On Windows
+    ```
 
 2. **Clone the Repository**
 
-Instructions:
-   ```bash
-   git clone https://github.com/aishwaryakumara/LegalAI_HCI.git
-   ```
+    Instructions:
+    ```bash
+    git clone https://github.com/aishwaryakumara/LegalAI_HCI.git
+    ```
 
-3. Navigate to the project directory:
+3. **Navigate to the project directory:**
     ```bash
     cd legal-system-ai
     ```
-4. Install Vite:
+4. **Install Vite:**
     ```bash
     npm install vite
     ```
@@ -97,23 +97,23 @@ Instructions:
     npx vite
     ```
 5. **(Optional) Set Up .env File**
-We have set a .env file to store our API Key Securely. We have included this env file in .gitignore so that it does not get added to Github when we push our code.
+    We have set a .env file to store our API Key Securely. We have included this env file in .gitignore so that it does not get added to Github when we push our code.
 
-Instructions:
-You can choose to setup a .env file to maintain your API keys and load into into the python environment. Alternatively, you can also directly use the API key in the code
+    Instructions:
+    You can choose to setup a .env file to maintain your API keys and load into into the python environment. Alternatively, you can also directly use the API key in the code
 
-Create a .env file in the root directory to store your API key securely:
-   ```bash
-    GEMINI_API_KEY="your_api_key_here"
-```
+    Create a .env file in the root directory to store your API key securely:
+    ```bash
+        GEMINI_API_KEY="your_api_key_here"
+    ```
 
-To prevent accidental sharing of the .env file, add it to .gitignore:
-Create a .gitignore file and add .env
+    To prevent accidental sharing of the .env file, add it to .gitignore:
+    Create a .gitignore file and add .env
 
-We have currently added our API key for the purpose of testing this application
+    We have currently added our API key for the purpose of testing this application
 
 
-6. Run the code:
+6. **Run the code:**
     ```bash
     npm run dev
     ```
