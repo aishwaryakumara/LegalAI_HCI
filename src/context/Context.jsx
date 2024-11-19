@@ -1,10 +1,12 @@
 import { createContext, useEffect, useState } from 'react';
 import { runGemini } from '../config/gemini';
 
+// Creating a context for global state management
 export const Context = createContext();
 
 const ContextProvider = ({ children }) => {
 
+    // variable which is needed to manage applications behaviour and data
     const [input, setInput] = useState('');
     const [recentPrompt, setRecentPrompt] = useState('');
     const [prevPrompt, setPrevPrompt] = useState([]);
@@ -12,17 +14,29 @@ const ContextProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [resultData, setResultData] = useState("");
 
+    /**
+     * Creating a typeWriter affect by adding delay.
+     * @param {number} index - index of the word.
+     * @param {string} nextWord - the next word to be added.
+     */
     const delayPara = (index, nextWord) => {
         setTimeout(function () {
             setResultData(prev => prev + nextWord);
         }, 75 * index)
     }
 
+    /**
+     * Resets the chat state and starts new Conversation state.
+     */
     const newChat = () => {
         setLoading(false)
         setshowResults(false)
     }
 
+    /**
+     * Handling sending of a prompt to backend and processing the response
+     * @param {string} prompt - The input prompt to be passed.
+     */
     const onSent = async (prompt) => {
         setResultData("");
         setLoading(true);
@@ -48,7 +62,6 @@ const ContextProvider = ({ children }) => {
             }
         }
         let newResponse2 = newResponse.split("*").join("<br>");
-        // setResultData(newResponse2);
         let newResponseArray = newResponse2.split(" ");
 
         for (let i = 0; i < newResponseArray.length; i++) {
@@ -60,7 +73,7 @@ const ContextProvider = ({ children }) => {
 
     }
 
-
+    // Context value which contains functions and state values which is shared across components
     const contextValue = {
         prevPrompt,
         setPrevPrompt,

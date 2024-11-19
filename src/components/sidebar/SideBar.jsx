@@ -5,9 +5,13 @@ import { assets } from '../../assets/assets';
 
 const SideBar = () => {
 
+    // State to manage the sidebar's view
     const [extended, setExtended] = useState(false);
+
+    // Destructuring variables and functions from the Context
     const { onSent, prevPrompt, setRecentPrompt, newChat } = useContext(Context);
 
+    // method to load recent prompt
     const loadPrompt = async (prompt) => {
         setRecentPrompt(prompt);
         await onSent(prompt);

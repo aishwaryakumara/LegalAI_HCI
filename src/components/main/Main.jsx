@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-import './main.css';
-import { assets } from '../../assets/assets';
-import { Context } from '../../context/Context';
+import './main.css'; // Importing styles required
+import { assets } from '../../assets/assets'; // Importing assets
+import { Context } from '../../context/Context'; // Importing Context for state management
 
 const Main = () => {
 
+    // Destructuring variables and functions from the Context
     const { onSent, recentPrompt, showResults, loading, resultData, setInput, input } = useContext(Context);
 
 
